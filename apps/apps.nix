@@ -12,6 +12,7 @@ environment.systemPackages = with pkgs; [
 	prismlauncher
 	code-cursor
 	obs-studio
+	xivlauncher
 ];
 
 }
