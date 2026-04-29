@@ -11,9 +11,12 @@ imports = [
 programs.hyprland.enable = true;
 
 # Login Screen
-services.displayManager.sddm = {
-	enable = true;
-	wayland.enable = true;
+services.displayManager = {
+	defaultSession = "hyprland";
+	sddm = {
+		enable = true;
+		wayland.enable = true;
+	};
 };
 
 # XDG Portal
