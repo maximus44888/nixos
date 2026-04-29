@@ -7,7 +7,7 @@ environment.systemPackages = with pkgs; [
 	brave
 	discord
 	qbittorrent
-	mpv
+	(mpv.override { youtubeSupport = false; })
 	syncplay
 	prismlauncher
 	code-cursor
