@@ -19,13 +19,6 @@ services.displayManager = {
 	};
 };
 
-# XDG Portal
-xdg.portal = {
-	enable = true;
-	# GTK Theming
-	extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
-};
-
 # Disable Keyboard joystick input
 services.udev.extraRules = ''
 	# idVendor and idProduct are obtained with lsusb (usbutils package)
