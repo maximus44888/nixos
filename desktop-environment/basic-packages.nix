@@ -20,7 +20,7 @@ environment.systemPackages = with pkgs; [
 	hyprshot
 
 	# File manager
-	kdePackages.dolphin
+	nautilus
 
 	# Authentification Agent
 	hyprpolkitagent
