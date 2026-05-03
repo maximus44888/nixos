@@ -10,9 +10,6 @@ environment.systemPackages = with pkgs; [
 	mako
 	libnotify
 	
-	# Status bar
-	waybar
-
 	# Application launcher
 	rofi
 
@@ -28,6 +25,9 @@ environment.systemPackages = with pkgs; [
 
 programs = {
 	git = {
+		enable = true;
+	};
+	waybar = {
 		enable = true;
 	};
 	neovim = {
