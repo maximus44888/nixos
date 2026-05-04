@@ -50,7 +50,7 @@ programs = {
 				set listchars=tab:>\ ,multispace:·,lead:·,trail:·,nbsp:+
 			'';
 		};
-	};			
+	};
 };
 
 }
