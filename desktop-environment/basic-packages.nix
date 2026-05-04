@@ -39,16 +39,7 @@ programs = {
 		enable = true;
 		defaultEditor = true;
 		configure = {
-			customRC = ''
-				set shiftwidth=2
-				set tabstop=2
-
-				set number
-				set relativenumber
-
-				set list
-				set listchars=tab:>\ ,multispace:·,lead:·,trail:·,nbsp:+
-			'';
+			customLuaRC = builtins.readFile ./nvim/init.lua;
 		};
 	};
 };
