@@ -26,9 +26,19 @@ services.udev.extraRules = ''
 '';
 
 # Fonts
-fonts.packages = [
-	pkgs.jetbrains-mono
-]
-++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
+fonts = {
+	enableDefaultPackages = true;
+	packages = with pkgs; [
+		# https://gitlab.com/fazzi/nixohess/-/blob/main/modules/core/fonts.nix
+		noto-fonts # Google Noto Fonts
+		noto-fonts-color-emoji # Emoji Font
+		noto-fonts-cjk-sans # Chinese, Japanese and Korean fonts
+		corefonts # ms fonts
+		vista-fonts # more ms fonts including calibri and consolas
+		inter
+
+		jetbrains-mono
+	] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
+};
 
 }
