@@ -38,3 +38,6 @@ vim.opt.undofile = true
 
 -- Confirm dialog for unsaved changes
 vim.opt.confirm = true
+
+-- Clear search highlights
+vim.keymap.set("n", "<Esc>", '<cmd>nohlsearch<CR>')
