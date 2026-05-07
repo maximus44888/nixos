@@ -29,3 +29,6 @@ vim.keymap.set('n', '<down>', '<cmd>echo "Use j"<CR>')
 vim.api.nvim_create_autocmd({ 'TextYankPost' }, {
 	callback = function() vim.hl.on_yank() end,
 })
+
+-- Highlight the line the cursor is on
+vim.opt.cursorline = true
