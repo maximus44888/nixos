@@ -2,6 +2,10 @@
 
 {
 
+imports = [
+	./neovim.nix
+];
+
 environment.systemPackages = with pkgs; [
 	# Terminal emulator
 	ghostty
@@ -38,15 +42,6 @@ programs = {
 	};
 	waybar = {
 		enable = true;
-	};
-	neovim = {
-		enable = true;
-		defaultEditor = true;
-		viAlias = true;
-		vimAlias = true;
-		configure = {
-			customLuaRC = builtins.readFile ./nvim/init.lua;
-		};
 	};
 };
 
