@@ -5,10 +5,8 @@
 imports = [
 	./basic-packages.nix
 	./sound.nix
+	./hyprland.nix
 ];
-
-# Hyprland
-programs.hyprland.enable = true;
 
 # Login Screen
 services.displayManager = {
