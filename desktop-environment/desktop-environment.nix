@@ -2,12 +2,6 @@
 
 {
 
-imports = [
-	./basic-packages.nix
-	./sound.nix
-	./hyprland.nix
-];
-
 services.displayManager = {
 	defaultSession = "hyprland";
 	sddm = {

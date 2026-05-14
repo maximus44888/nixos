@@ -1,14 +1,19 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, ... }: let
 
-{
+currentDir = ./.;
 
-imports = [
-	./hardware-configuration.nix
-	./desktop-environment/desktop-environment.nix
-	./apps/apps.nix
-	./hjem.nix
-	./maxi.nix
-];
+directoryContents = builtins.readDir currentDir;
+
+filtered = lib.filterAttrs (name: type:
+	(lib.hasSuffix ".nix" name && name != "default.nix" && name != "configuration.nix")
+	|| (type == "directory" && builtins.pathExists ( currentDir + "/${name}/default.nix"))
+) directoryContents;
+
+imports = lib.mapAttrsToList (name: _: currentDir + "/${name}") filtered;
+
+in {
+
+inherit imports;
 
 boot.loader.systemd-boot.enable = true;
 boot.loader.efi.canTouchEfiVariables = true;

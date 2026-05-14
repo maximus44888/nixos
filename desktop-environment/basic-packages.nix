@@ -2,10 +2,6 @@
 
 {
 
-imports = [
-	./neovim.nix
-];
-
 environment.systemPackages = with pkgs; [
 	# Terminal emulator
 	ghostty
