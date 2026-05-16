@@ -1,24 +1,15 @@
-{ config, lib, pkgs, ... }: let
+{ lib, ... } : let
 
 currentDir = ./.;
 
 directoryContents = builtins.readDir currentDir;
 
 filtered = lib.filterAttrs (name: type:
-	(lib.hasSuffix ".nix" name && name != "default.nix" && name != "configuration.nix")
+	(lib.hasSuffix ".nix" name && name != "default.nix")
 	|| (type == "directory" && builtins.pathExists ( currentDir + "/${name}/default.nix"))
 ) directoryContents;
 
 imports = lib.mapAttrsToList (name: _: currentDir + "/${name}") filtered;
 
-in {
+in { inherit imports; }
 
-inherit imports;
-
-nixpkgs.config.allowUnfree = true;
-
-hardware.enableAllFirmware = true;
-
-system.stateVersion = "25.11";
-
-}
