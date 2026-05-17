@@ -34,6 +34,12 @@ programs = {
 	yazi = {
 		enable = true;
 	};
+	zoxide = {
+		enable = true;
+		flags = [
+			"--cmd cd"
+		];
+	};
 };
 
 }
