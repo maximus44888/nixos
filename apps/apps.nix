@@ -11,7 +11,6 @@ environment.systemPackages = with pkgs; [
 	(mpv.override { youtubeSupport = false; })
 	syncplay
 	prismlauncher
-	xivlauncher
 ];
 
 programs = {
