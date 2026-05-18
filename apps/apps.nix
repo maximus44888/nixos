@@ -2,8 +2,6 @@
 
 {
 
-programs.steam.enable = true;
-
 environment.systemPackages = with pkgs; [
 	brave
 	discord
@@ -16,6 +14,12 @@ environment.systemPackages = with pkgs; [
 programs = {
 	obs-studio = {
 		enable = true;
+	};
+	steam = {
+		enable = true;
+		extraCompatPackages = with pkgs; [
+			proton-ge-bin
+		];
 	};
 };
 
