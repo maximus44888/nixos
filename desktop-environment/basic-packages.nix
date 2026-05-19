@@ -25,9 +25,6 @@ environment.systemPackages = with pkgs; [
 ];
 
 programs = {
-	git = {
-		enable = true;
-	};
 	waybar = {
 		enable = true;
 	};
